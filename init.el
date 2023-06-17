@@ -26,6 +26,8 @@
 
 (global-set-key (kbd "C-S-c") 'kill-ring-save)
 (global-set-key (kbd "C-v") 'yank)
+(global-set-key (kbd "C-<") 'format-all-buffer)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
