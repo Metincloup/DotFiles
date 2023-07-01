@@ -37,7 +37,7 @@
  '(custom-safe-themes
    '("f366d4bc6d14dcac2963d45df51956b2409a15b770ec2f6d730e73ce0ca5c8a7" "ba4ab079778624e2eadbdc5d9345e6ada531dc3febeb24d257e6d31d5ed02577" default))
  '(package-selected-packages
-   '(astyle format-all clang-format flycheck zenburn-theme undo-fu smex gruber-darker-theme flymake flx-ido company-c-headers chess avy auto-complete-clang)))
+   '(flymd nasm-mode masm-mode astyle format-all clang-format flycheck zenburn-theme undo-fu smex gruber-darker-theme flymake flx-ido company-c-headers chess avy auto-complete-clang)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
