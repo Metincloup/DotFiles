@@ -1,9 +1,32 @@
 (require 'package)
+
+(add-to-list 'package-archives
+             '("elpy" . "http://jorgenschaefer.github.io/packages/"))
+
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
+(add-to-list 'load-path "~/.emacs.d/site-lisp/")
+
+
+; list the packages you want
+(setq package-list
+    '(flymd nasm-mode masm-mode astyle format-all clang-format flycheck zenburn-theme undo-fu smex gruber-darker-theme flymake flx-ido company-c-headers chess avy auto-complete-clang))
+
+
+; activate all the packages
 (package-initialize)
 
-(setq make-backup-files nil)
+
+; fetch the list of packages available 
+(unless package-archive-contents
+  (package-refresh-contents))
+
+; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+    
+    (setq make-backup-files nil)
 
 (delete-selection-mode 1)
 (global-unset-key (kbd "C-z"))
@@ -24,10 +47,8 @@
 (global-flycheck-mode t)
 (global-display-line-numbers-mode t)
 
-(global-set-key (kbd "C-S-c") 'kill-ring-save)
-(global-set-key (kbd "C-v") 'yank)
-(global-set-key (kbd "C-<") 'format-all-buffer)
 
+(global-set-key (kbd "C-<") 'format-all-buffer)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -35,13 +56,12 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(gruber-darker))
  '(custom-safe-themes
-   '("f366d4bc6d14dcac2963d45df51956b2409a15b770ec2f6d730e73ce0ca5c8a7" "ba4ab079778624e2eadbdc5d9345e6ada531dc3febeb24d257e6d31d5ed02577" default))
+   '("e27c9668d7eddf75373fa6b07475ae2d6892185f07ebed037eedf783318761d7" default))
  '(package-selected-packages
-   '(flymd nasm-mode masm-mode astyle format-all clang-format flycheck zenburn-theme undo-fu smex gruber-darker-theme flymake flx-ido company-c-headers chess avy auto-complete-clang)))
+   '(zenburn-theme undo-fu smex nasm-mode masm-mode gruber-darker-theme format-all flymd flycheck flx-ido company-c-headers clang-format chess avy auto-complete-clang astyle)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-;;a
