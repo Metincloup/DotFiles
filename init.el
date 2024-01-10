@@ -10,7 +10,7 @@
 
 ; list the packages you want
 (setq package-list
-    '(flymd nasm-mode masm-mode astyle format-all clang-format flycheck zenburn-theme undo-fu smex gruber-darker-theme flymake flx-ido company-c-headers chess avy auto-complete-clang))
+    '(flymd magit nasm-mode masm-mode astyle format-all clang-format flycheck zenburn-theme undo-fu smex gruber-darker-theme flymake flx-ido company-c-headers activity-watch-mode  chess avy auto-complete-clang))
 
 
 ; activate all the packages
@@ -33,7 +33,7 @@
 (global-set-key (kbd "C-z")   'undo-fu-only-undo)
 (global-set-key (kbd "C-S-z") 'undo-fu-only-redo)
 (setq select-enable-clipboard t)
-(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+;(setq interprogram-paste-function 'x-selection-value)
 
 
 
@@ -47,6 +47,7 @@
 (global-flycheck-mode t)
 (global-display-line-numbers-mode t)
 
+(global-activity-watch-mode)
 
 (global-set-key (kbd "C-<") 'format-all-buffer)
 (custom-set-variables
@@ -58,7 +59,7 @@
  '(custom-safe-themes
    '("e27c9668d7eddf75373fa6b07475ae2d6892185f07ebed037eedf783318761d7" default))
  '(package-selected-packages
-   '(zenburn-theme undo-fu smex nasm-mode masm-mode gruber-darker-theme format-all flymd flycheck flx-ido company-c-headers clang-format chess avy auto-complete-clang astyle)))
+   '(magit activity-watch-mode zenburn-theme undo-fu smex nasm-mode masm-mode gruber-darker-theme format-all flymd flycheck flx-ido company-c-headers clang-format chess avy auto-complete-clang astyle)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
